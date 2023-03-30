@@ -1,0 +1,92 @@
+## PARTE 1
+/- ARDUIN
+
+void setup() {
+pinMode(13, OUTPUT);
+Serial.begin(9600);
+
+}
+
+void loop() {
+  digitalWrite(13, 1);
+  Serial.println("1");
+  delay(1000);
+
+  digitalWrite(13,0);
+  Serial.println("0");
+  delay(1000);
+  
+}
+
+/- Processing
+
+import processing.serial.*;
+Serial port;
+
+void setup(){
+  port = new Serial (this, Serial.list()[1], 9600);
+}
+
+void draw(){
+  while (port.available() > 0) {
+    String mensagem = port.readStringUntil(10);
+    if (mensagem != null) {
+      int valor = int(mensagem.trim());
+      
+      if (valor == 0)
+        println("Apagou");
+        
+      if (valor == 1)
+        println("Acendeu");
+    }
+  }
+}
+
+## PARTE 2
+
+/- ARDUIN
+
+void setup() {
+  //pinMode(0, INPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  int valor =  analogRead(A0);
+  String mensagem = String(valor);
+  Serial.println("0");
+  delay(50);
+}
+
+/- PROCESSING
+
+import processing.serial.*;
+Serial port;
+
+void setup(){
+  size(1104, 400);
+  port = new Serial (this, Serial.list()[X], 9600);
+}
+
+void draw(){
+  while(port.available()>0){
+    String mensagem = port.readStringUntil(10);
+    if(mensagem!=null){
+      print(mensagem);
+      int pos = int(mensagem.trim());
+      background(0);
+      rect(pos, 360,80,20);
+    }
+  }
+}
+
+
+## PARTE 3 DESAFIO
+CRIAR SISTEMA QUE MOSTRE TELA COLORIDA
+DE ACORDO COM A VOLTAGEM RECEBIDA NA PORTA:
+VERDE 5V
+VERMELHO 0V
+PRETO PRA FLUTUAÇÃO DE VOLTAGEM
+
+CRIAR UM VIDEO CURTO EXPLICANDO O DESAFIO E SUA RESOLUÇÃO
