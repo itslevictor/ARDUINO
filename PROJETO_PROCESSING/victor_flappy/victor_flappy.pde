@@ -41,7 +41,8 @@ void draw(){
         tick +=0.3;
       }
       rotate(tick*TWO_PI/360);
-      
+      // tenho que usar o translate para colocar o centro
+      //https://processing.org/reference/translate_.html
       image(flappy, posx+2*tick, 100-posicao, width/8, height/8);
       if (posicao == -500){
         state = 0;
