@@ -1,6 +1,6 @@
 // codigo 1
 int posicao = 0;
-float posx = 50;
+float posx = 0;
 /* estados definem onde o jogo localiza, 0 = morte, 1 = jogo rodando, 2 = menu principal
 */
 int state = 1;
@@ -40,6 +40,7 @@ void draw(){
       if(tick<=10){
         tick +=0.3;
       }
+      translate(50,0);
       rotate(tick*TWO_PI/360);
       // tenho que usar o translate para colocar o centro
       //https://processing.org/reference/translate_.html
