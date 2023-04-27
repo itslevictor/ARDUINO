@@ -24,6 +24,7 @@ void draw(){
   println(posicao);
   switch(state){
     case 0:
+      //TELA DE MORTE
       background(0);
       textAlign(CENTER,CENTER);
       textSize(100);
@@ -34,6 +35,7 @@ void draw(){
       text("Aperte ESPACO para ir para o menu",width/2, height/2);
       break;
     case 1:
+      //TELA DENTRO DO JOGO
       background(0);
       posicao -=2;
      
@@ -51,6 +53,7 @@ void draw(){
       }
       break;
     case 2:
+    //MENU PRINCIPAL
       background(0);
       text("Menu Principal",width/2, height/2-200);
       textSize(50);
