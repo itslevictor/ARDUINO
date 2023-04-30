@@ -30,3 +30,34 @@ Observando o código, podemos notar a configuração do pino no setup como “13
 
 
 Uma vez ambientalizado, desenvolvi a versão 2 do código, que está no arquivo "aula 02". Agora, de forma mais confortável, temos a forma final com a frase “Ola mundo” em código morse, versão 3 encontrada neste repositório como "atividade 1 - codigo morse".
+
+## ATIVIDADE 2
+
+Já no segundo momento, mais ambientados, codificamos e produzimos um sensor luminoso, veja o código:
+
+```C++
+int valor;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(A0,INPUT);
+  pinMode (13, OUTPUT);
+  
+}
+void loop(){
+  valor =  analogRead(A0);
+  if (valor <=500){
+  digitalWrite(13, 1);
+  delay(200);
+  Serial.println("tudo escuro");
+  delay(100);
+  }
+  else {
+    Serial.println("Luz luz!");
+    delay(100);
+    digitalWrite(13, 0);
+    delay(10);
+    }
+}
+```
+Interessante como este simples código pode ser utilizado em luzes de emergência ou sensores mais básicos!.
