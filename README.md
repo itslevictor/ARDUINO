@@ -1,5 +1,5 @@
 # ARDUINO
-Arduino aula Instalações multimida
+* Coletânea de atividades da disciplina de instalações multimídias.
 
 ## ATIVIDADE 1
 
